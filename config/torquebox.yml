@@ -1,0 +1,18 @@
+---
+# This is the TorqueBox configuration file. Refer to the TorqueBox
+# documentation at http://torquebox.org/documentation/current/ 
+# for all configuration options.
+web:
+  context: "/"
+
+ruby:
+  version: 1.9
+
+jobs:
+  concurrency: 3
+  example:
+    job: Example::Job
+    description: Doesn't actually do anything, just fires
+    cron: '0 */1 * * * ?' # run every minute
+    singleton: true
+    timeout: '59s' # kill after 59 seconds
